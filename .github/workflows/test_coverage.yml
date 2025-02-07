@@ -1,0 +1,41 @@
+name: Rust Tests and Coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Rust
+      uses: actions/setup-rust@v1
+      with:
+        rust-version: 1.68
+
+    - name: Install dependencies
+      run: cargo install cargo-tarpaulin
+
+    - name: Run tests and coverage
+      run: cargo tarpaulin --out json > coverage.json || true
+
+    - name: Upload coverage report to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: coverage.json
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Check coverage threshold
+      run: |
+        COVERAGE=$(jq '.total.pct' coverage.json)
+        echo "Coverage is: $COVERAGE"
+        if (( $(echo "$COVERAGE < 30" | bc -l) )); then
+          echo "Coverage is below 30%! Failing the check."
+          exit 1
+        fi
