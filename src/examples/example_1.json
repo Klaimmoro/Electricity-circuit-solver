@@ -1,0 +1,49 @@
+{
+    "elements": [
+        {
+            "type": "Resistor",
+            "value": {
+                "id": "R1",
+                "resistance": 5.0,
+                "connection": {
+                    "from": "N1",
+                    "to": "N2"
+                }
+            }
+        }
+    ],
+    "nodes": [ 
+        {
+            "id": "N1",
+            "elements": [
+                {
+                    "type": "Resistor",
+                    "value": {
+                        "id": "R1",
+                        "resistance": 5.0,
+                        "connection": {
+                            "from": "N1",
+                            "to": "N2"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "N2",
+            "elements": [
+                {
+                    "type": "Resistor",
+                    "value": {
+                        "id": "R1",
+                        "resistance": 5.0,
+                        "connection": {
+                            "from": "N1",
+                            "to": "N2"
+                        }
+                    }
+                }
+            ]
+        }
+     ]
+}
