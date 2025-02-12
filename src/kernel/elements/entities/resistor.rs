@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 /// Struct to store info about resistor
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Resistor {
-    id: String,
-    resistance: f64,
-    connection: Connection,
+    pub id: String,
+    pub resistance: f32,
+    pub connection: Connection,
 }

@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 /// Struct to store info about voltage source DC
 #[derive(Debug, Serialize, Deserialize)]
 pub struct VoltageSourceDC {
-    id: String,
-    voltage: f64,
-    connection: Connection,
+    pub id: String,
+    pub voltage: f32,
+    pub connection: Connection,
 }
