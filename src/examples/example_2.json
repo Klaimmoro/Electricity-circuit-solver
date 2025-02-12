@@ -6,8 +6,8 @@
                 "id": "R1",
                 "resistance": 2.0,
                 "connection": {
-                    "from": "Va",
-                    "to": "Vb"
+                    "from": "V1",
+                    "to": "Ground"
                 }
             }
         },
@@ -17,8 +17,8 @@
                 "id": "R2",
                 "resistance": 4.0,
                 "connection": {
-                    "from": "Vb",
-                    "to": "Vc"
+                    "from": "V1",
+                    "to": "V2"
                 }
             }
         },
@@ -28,7 +28,7 @@
                 "id": "R3",
                 "resistance": 8.0,
                 "connection": {
-                    "from": "Vb",
+                    "from": "V2",
                     "to": "Ground"
                 }
             }
@@ -36,21 +36,21 @@
         {
             "type": "VoltageSourceDC",
             "value": {
-                "id": "V1",
+                "id": "Vs1",
                 "voltage": 32.0,
                 "connection": {
-                    "from": "Va",
-                    "to": "Ground"
+                    "from": "V1",
+                    "to": "V2"
                 }
             }
         },
         {
-            "type": "VoltageSourceDC",
+            "type": "CurrentSourceDC",
             "value": {
-                "id": "V2",
-                "voltage": 32.0,
+                "id": "I1",
+                "currence": 32.0,
                 "connection": {
-                    "from": "Vc",
+                    "from": "V1",
                     "to": "Ground"
                 }
             }
@@ -58,7 +58,7 @@
     ],
     "nodes": [ 
         {
-            "id": "Va",
+            "id": "V1",
             "elements": [
                 {
                     "type": "Resistor",
@@ -66,35 +66,8 @@
                         "id": "R1",
                         "resistance": 2.0,
                         "connection": {
-                            "from": "Va",
-                            "to": "Vb"
-                        }
-                    }
-                },
-                {
-                    "type": "VoltageSourceDC",
-                    "value": {
-                        "id": "V1",
-                        "voltage": 32.0,
-                        "connection": {
-                            "from": "Va",
+                            "from": "V1",
                             "to": "Ground"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "id": "Vb",
-            "elements": [
-                {
-                    "type": "Resistor",
-                    "value": {
-                        "id": "R1",
-                        "resistance": 2.0,
-                        "connection": {
-                            "from": "Va",
-                            "to": "Vb"
                         }
                     }
                 },
@@ -104,8 +77,46 @@
                         "id": "R2",
                         "resistance": 4.0,
                         "connection": {
-                            "from": "Vb",
-                            "to": "Vc"
+                            "from": "V1",
+                            "to": "V2"
+                        }
+                    }
+                },
+                {
+                    "type": "VoltageSourceDC",
+                    "value": {
+                        "id": "Vs1",
+                        "voltage": 32.0,
+                        "connection": {
+                            "from": "V1",
+                            "to": "V2"
+                        }
+                    }
+                },
+                {
+                    "type": "CurrentSourceDC",
+                    "value": {
+                        "id": "I1",
+                        "currence": 32.0,
+                        "connection": {
+                            "from": "V1",
+                            "to": "Ground"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "V2",
+            "elements": [
+                {
+                    "type": "Resistor",
+                    "value": {
+                        "id": "R2",
+                        "resistance": 4.0,
+                        "connection": {
+                            "from": "V1",
+                            "to": "V2"
                         }
                     }
                 },
@@ -115,35 +126,19 @@
                         "id": "R3",
                         "resistance": 8.0,
                         "connection": {
-                            "from": "Vb",
+                            "from": "V2",
                             "to": "Ground"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "id": "Vc",
-            "elements": [
-                {
-                    "type": "Resistor",
-                    "value": {
-                        "id": "R2",
-                        "resistance": 4.0,
-                        "connection": {
-                            "from": "Vb",
-                            "to": "Vc"
                         }
                     }
                 },
                 {
                     "type": "VoltageSourceDC",
                     "value": {
-                        "id": "V2",
-                        "voltage": 20.0,
+                        "id": "Vs1",
+                        "voltage": 32.0,
                         "connection": {
-                            "from": "Vc",
-                            "to": "Ground"
+                            "from": "V1",
+                            "to": "V2"
                         }
                     }
                 }
