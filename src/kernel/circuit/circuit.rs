@@ -6,6 +6,8 @@ use serde::{Deserialize, Serialize};
 /// Struct to store info about initial circuit
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Circuit {
+    pub type_analysis: String,
+    pub frequency: f32,
     pub elements : Vec<ElementType>,
     pub nodes: Vec<Node>
 }
@@ -22,7 +24,9 @@ impl Circuit {
             .expect("Error deserializing JSON in Circuit");
         Self { 
             elements: parsed.elements,
-            nodes: parsed.nodes
+            nodes: parsed.nodes,
+            type_analysis: parsed.type_analysis,
+            frequency: parsed.frequency,
         }
     }
 }
