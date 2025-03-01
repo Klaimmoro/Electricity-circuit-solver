@@ -4,7 +4,7 @@ use super::entities::node::Node;
 use serde::{Deserialize, Serialize};
 ///
 /// Struct to store info about initial circuit
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Circuit {
     pub type_analysis: String,
     pub frequency: f32,

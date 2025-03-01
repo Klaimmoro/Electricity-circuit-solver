@@ -8,6 +8,7 @@ version = "0.1.0"
 dependencies = [
  "indexmap",
  "nalgebra",
+ "num-complex",
  "serde",
  "serde_json",
 ]

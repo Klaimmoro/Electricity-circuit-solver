@@ -1,2 +1,2 @@
 pub mod entities;
-pub mod mna;
+pub mod kirchhoff;

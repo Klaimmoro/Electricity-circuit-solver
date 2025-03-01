@@ -1,4 +1,6 @@
 {
+    "type_analysis": "AC",
+    "frequency": 0.0,
     "elements": [
         {
             "type": "Resistor",
