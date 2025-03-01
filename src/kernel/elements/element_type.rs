@@ -1,5 +1,9 @@
+use super::entities::{
+    capacitor::Capacitor, current_source_ac::CurrentSourceAC, current_source_dc::CurrentSourceDC,
+    inductor::Inductor, resistor::Resistor, switch::Switch, voltage_source_ac::VoltageSourceAC,
+    voltage_source_dc::VoltageSourceDC,
+};
 use serde::{Deserialize, Serialize};
-use super::entities::{capacitor::Capacitor, current_source_ac::CurrentSourceAC, current_source_dc::CurrentSourceDC, inductor::Inductor, resistor::Resistor, switch::Switch, voltage_source_ac::VoltageSourceAC, voltage_source_dc::VoltageSourceDC};
 ///
 /// Enum for structurizing element's type's
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]

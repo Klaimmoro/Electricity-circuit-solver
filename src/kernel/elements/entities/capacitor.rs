@@ -1,5 +1,5 @@
-use serde::{Deserialize, Serialize};
 use crate::kernel::circuit::entities::connection::Connection;
+use serde::{Deserialize, Serialize};
 ///
 /// Struct to store info about capacitor
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]

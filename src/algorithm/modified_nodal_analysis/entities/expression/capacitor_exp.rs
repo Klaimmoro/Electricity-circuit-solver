@@ -1,5 +1,5 @@
-use nalgebra::Complex;
 use crate::kernel::circuit::entities::node::Node;
+use nalgebra::Complex;
 #[derive(Clone, Debug)]
 ///
 /// Represent expression for capacitor I_C = (Node_a - Node_b)/Z_C

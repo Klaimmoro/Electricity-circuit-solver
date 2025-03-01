@@ -17,6 +17,6 @@ impl VoltageSourceAC {
     /// Get current currence
     pub fn curr_currence(&mut self, t: f32) -> f32 {
         let omega = 2.0 * std::f32::consts::PI * self.frequency;
-        self.voltage * (omega*t + self.phase).sin()
+        self.voltage * (omega * t + self.phase).sin()
     }
 }

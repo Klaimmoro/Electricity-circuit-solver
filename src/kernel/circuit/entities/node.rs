@@ -5,5 +5,5 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Node {
     pub id: String,
-    pub elements: Vec<ElementType>
+    pub elements: Vec<ElementType>,
 }
