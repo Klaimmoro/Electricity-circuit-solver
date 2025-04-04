@@ -104,10 +104,10 @@ impl Kirchhoff {
                         mut current_source_ac,
                     ) => {
                         let sign = if current_source_ac.connection.to == node.id {
+                            '+'
+                        } else {
                             current_source_ac.currence *= -1.0;
                             '-'
-                        } else {
-                            '+'
                         };
                         curr_equation
                             .left_side
@@ -119,10 +119,10 @@ impl Kirchhoff {
                         mut current_source_dc,
                     ) => {
                         let sign = if current_source_dc.connection.to == node.id {
+                            '+'
+                        } else {
                             current_source_dc.currence *= -1.0;
                             '-'
-                        } else {
-                            '+'
                         };
                         curr_equation
                             .left_side
@@ -130,7 +130,8 @@ impl Kirchhoff {
                         curr_equation_to_paint_left_side
                             .push_str(&format!("{}{}", sign, current_source_dc.id));
                     }
-                    crate::kernel::elements::element_type::ElementType::Switch(switch) => {}
+                    _ => continue,
+                    //crate::kernel::elements::element_type::ElementType::Switch(switch) => {}
                 }
             }
             if curr_equation_to_paint_right_side.is_empty() {

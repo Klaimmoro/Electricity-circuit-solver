@@ -1,2 +1,3 @@
+pub mod ac_analysis;
 pub mod kirchhoff_laws;
-pub mod modified_nodal_analysis;
+pub mod transient_analysis;
